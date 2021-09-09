@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my magic notes</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+     background: #ebecf0;
+
+    }
+    #navbar{
+        height: 50px;
+        border:none;
+        box-shadow: -5px -5px 20px #fff,5px 5px 20px #babecc;
+
+
+      
+    }
+    #logo{
+        display:inline;
+        margin: 20px 30px;
+        font-size: 30px;
+        line-height: 50px;
+        padding: 6px 20px; 
+        margin-left: 0px;
+    }
+    #logo img{
+        width: 50px;
+
+        }
+
+    #searchOption{
+        display: inline;
+        margin: 1px;
+        padding: 10px 20px; 
+        float: right;
+    }
+    #searchOption input{
+        font-size: 17px;
+        padding: 3px 4px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+     background: #ebecf0;
+
+    box-shadow: inset 2px 2px 5px #babecc,inset -5px -5px 10px #fff;
+    transition: all .6s ease-in-out;
+
+
+
+    }
+    #searchOption input::placeholder{
+        color: #858ca5;
+
+    }
+    #searchOption input:focus{
+    box-shadow:inset 1px 1px 2px #babecc,inset -1px -1px 2px #fff;
+}
+    /* #searchOption button{
+        font-size: 17px;
+        padding: 3px 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    } */
+
+    .container h1{
+        text-align: center;
+        text-transform: uppercase;
+        word-spacing: 10px;
+        border: 2px solid transparent;
+        color: #858ca5;
+
+
+
+        text-shadow: 1px 1px 1px #fff;
+
+    }
+
+    .container{
+        box-shadow: -5px -5px 10px #fff,5px 5px 10px #babebc;
+        height: 400px;
+
+    }
+
+
+
+    #inner-container{
+        /* border: 2px solid black; */
+        width: fit-content;
+        height: 300px;
+        box-shadow: -5px -5px 10px #fff,5px 5px 10px #babebc;
+
+        margin: 0px auto;
+
+        border-radius: 10px;
+        padding: 30px;
+        transition: all .6s ease-in-out;
+
+
+    }
+    #inner-container:hover{
+        box-shadow: inset 2px 2px 5px #babecc,inset -5px -5px 10px #fff;
+
+    }
+    #inner-container h3{
+        text-align: center; 
+        text-decoration: underline;
+        color: #858ca5;
+
+
+    }
+
+    #addText{
+        width: 100%;
+        font-size: 22px;
+    } 
+
+    #addtext::placeholder{
+        font-size: 20px;
+    } 
+
+    textarea{
+        font-size: 20px;
+        outline:none;
+        border:none;
+     background: #ebecf0;
+      margin: 25px;;
+      border-top:1px solid #858ca5;
+
+    }
+    
+    .btns{
+        display: block;
+        margin: 5px auto;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        /* margin-bottom: 2px; */
+        color: #858ca5;
+
+        font-weight: bold;
+        box-shadow: -5px -5px 20px #fff,5px 5px 20px #a2a7b8;
+        border: none;
+        /* border-top: 1px solid #61677c;
+        border-bottom: 1px solid #61677c; */
+
+
+       
+        
+
+    }
+    #before{
+        color: #858ca5;
+
+    }
+
+    .btns:hover{
+    box-shadow: -2px -2x 5px #fff,2px 2px 5px #babecc;
+}
+
+    .btns:active{
+    box-shadow: inset 1px 1px 2px #babecc,inset -1px -1px 2px #fff;
+}
+
+    #hori{
+        margin: 10px 0px;
+        color: #535869;
+
+    }
+
+    .noteCard{
+        border: 2px solid black;
+        width: 250px;
+        height: 230px;
+        padding: 20px 20px;
+        border-radius: 10px;
+        display:inline-block;
+        margin: 10px 10px;
+        overflow-y: scroll;
+        box-shadow: -5px -5px 10px #fff,5px 5px 10px #babebc;
+        border: none;
+
+            }
+    .noteCard h3{
+        font-weight: bold;
+        text-align: center;
+        color: #9299b3;
+
+
+    }
+    #heading2{
+        text-align: center;
+        color: #9299b3;
+
+    }
+
+    .card-text{
+        border: 2px solid transparent;
+        width: 100%;
+        overflow-wrap: break-word;
+        color: #858ca5;
+
+    }
+
+    @media (max-width: 800px) and (min-width:500px){
+        #navbar{
+            width: 129vw;
+            display: block;
+        }
+        .container h1{
+            border: 2px solid transparent;
+            display: block;
+            width: 129vw;
+
+        }
+
+        textarea {
+             height: 15em;
+            width: 25em;
+        }
+        
+       
+        #inner-container{
+            height: fit-content;
+        }
+
+        
+        .container{
+            width: 129vw;
+            height: 100vh;
+        }
+        hr{
+            width: 129vw;  
+        }
+
+        #heading2{
+            width: 129vw;
+        }
+
+        #before{
+            width: 129vw;
+        }
+
+        #inner-container2{
+            width: 129vw;
+        }
+        .container{
+            height: 570px;
+        }
+        
+        #logo img{
+            height: 70px;
+            width: 70px;
+        }
+
+        #navbar{
+            height: 80px;
+        }
+
+        #searchOption input{
+            font-size: 20px;
+            width: 300px;
+            height: 45px;
+            padding: 20px;
+        }
+        .container h1{
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #inner-container h3{
+            font-size: 30px;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+    }
+
+    @media (max-width: 500px) and (min-width: 350px){
+        #navbar{
+            width: 162vw;
+            display: block;
+        }
+        .container h1{
+            border: 2px solid transparent;
+            display: block;
+            width: 162vw;
+
+        }
+        #inner-container{
+            height: fit-content;
+        }
+        .container{
+            width: 162vw;
+            height: 100vh;
+        }
+        textarea {
+             height: 13em;
+            width: 14em;
+        }
+        hr{
+            width: 162vw;
+        }
+        #heading2{
+            width: 162vw;
+        }
+        
+        #before{
+            width: 162vw;
+        }
+        #inner-container2{
+            width: 162vw;
+
+        }
+
+        /* from here */
+        .container{
+            height: 720px;
+        }
+        
+        #logo img{
+            height: 90px;
+            width: 90px;
+        }
+
+        #navbar{
+            height: 90px;
+        }
+
+        #searchOption input{
+            font-size: 25px;
+            width: 400px;
+            height: 55px;
+            padding: 20px;
+        }
+        .container h1{
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+        #inner-container h3{
+            font-size: 30px;
+            padding: 15px;
+            text-transform: uppercase;
+        }
+        #addtext::placeholder{
+        font-size: 30px;
+        }
+
+        #addbtn{
+            font-size: 30px;
+            margin: 10px auto;
+        } 
+        
+        textarea{
+            font-size: 30px;
+        }
+        
+        #heading2{
+            font-size: 30px;
+        }
+        .noteCard{
+            height: 400px;
+            width: 400px;
+            display:block;
+            margin: 30px auto;
+
+        }
+
+        .inner-container2{
+            justify-content: center;
+            align-items: center;
+        }
+        .card-text{
+            font-size: 26px;
+        }
+        #notehead{
+            font-size: 35px;
+        }
+        .btns{
+            font-size: 30px;
+        }
+        #before{
+            font-size: 26px;
+        }
+    
+
+     
+
+      
+
+        
+        
+        
+
+
+
+
+    }
+   
+ 
+    
+
+</style>
+<body>
+    <div id="navbar">
+        <div id="logo"><img src="logo.png"></div>
+        <div id="searchOption">
+            <input type="search" id="search" placeholder="search your notes here...">
+            <!-- <button type="button">search</button> -->
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to notes app</h1>
+        <div id="inner-container">
+            <h3>Add a note</h3>
+            <textarea id="addtext" cols='58' rows='6' placeholder="click here to add text..."></textarea>
+            <button id="addbtn" class="btns">Add Note</button>
+        </div>
+    </div>
+    <br><br><br>
+    <hr id="hori">
+    <h2 id="heading2">YOUR NOTES</h2>
+    <hr>
+    <div id="inner-container2">
+    
+    </div>
+
+<script src="app.js"></script>
+    
+</body>
+</html>
